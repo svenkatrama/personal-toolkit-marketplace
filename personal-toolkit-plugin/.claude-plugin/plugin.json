@@ -1,0 +1,6 @@
+{
+  "name": "personal-toolkit-plugin",
+  "version": "1.0.0",
+  "description": "Personal cross-device/cross-account workflow skills: persistent visible planning (create/continue) and interactive teaching sessions.",
+  "skills": "./skills/"
+}

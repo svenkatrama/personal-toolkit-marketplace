@@ -1,0 +1,18 @@
+{
+  "name": "personal-toolkit-marketplace",
+  "owner": {
+    "name": "Sai Vignesh Venkatraman"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugin marketplace for cross-device/cross-account workflow skills.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "personal-toolkit-plugin",
+      "source": "./personal-toolkit-plugin",
+      "description": "Personal cross-device/cross-account workflow skills: persistent visible planning (create/continue) and interactive teaching sessions.",
+      "version": "1.0.0"
+    }
+  ]
+}
