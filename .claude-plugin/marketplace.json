@@ -12,7 +12,7 @@
       "name": "personal-toolkit-plugin",
       "source": "./personal-toolkit-plugin",
       "description": "Personal cross-device/cross-account workflow skills: persistent visible planning (create/continue) and interactive teaching sessions.",
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   ]
 }

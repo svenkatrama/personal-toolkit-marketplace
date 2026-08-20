@@ -25,10 +25,12 @@ claude plugin install personal-toolkit-plugin@personal-toolkit-marketplace
 git URL.)
 
 That's the entire setup on a new account/device — no `~/.claude/CLAUDE.md` edits, no
-`@import` lines, no path configuration. The install registers both the three skills and the
-`global-preferences.md` SessionStart hook (see `personal-toolkit-plugin/README.md`) in one
-step; any machine-specific instructions (e.g. enterprise tooling notes) stay local to that
-device's own `~/.claude/CLAUDE.md`, untouched by this plugin.
+`@import` lines, no path configuration. The install registers the three skills, the
+`global-preferences.md` SessionStart hook, and a second SessionStart hook that defaults
+`outputStyle` to `Concise` in `~/.claude/settings.json` if unset (see
+`personal-toolkit-plugin/README.md`) in one step; any machine-specific instructions (e.g.
+enterprise tooling notes) stay local to that device's own `~/.claude/CLAUDE.md`, untouched by
+this plugin.
 
 ## Updating
 

@@ -26,6 +26,22 @@ plugin — no `~/.claude/CLAUDE.md` edits, no `@import` lines, no manual path se
 machine-specific instructions (e.g. enterprise tooling notes) stay local to that machine's own
 `~/.claude/CLAUDE.md` and are never part of this file.
 
+## Default output style (auto-set)
+
+`hooks/set-default-output-style.sh` runs as a second `SessionStart` hook command. On every
+session start it checks `~/.claude/settings.json` (`$CLAUDE_CONFIG_DIR/settings.json` if that's
+set) for an existing `outputStyle` key. If one is already set — to `Concise` or anything else —
+it does nothing, so a manual choice is never overridden. If none is set, it merges in
+`"outputStyle": "Concise"` via `jq`, leaving every other key (hooks, enabled plugins, theme,
+etc.) untouched.
+
+This gives a fresh account/device the built-in `Concise` output style by default without ever
+hand-editing `settings.json` or running `/config` — just installing the plugin. Unlike an
+output style file a plugin ships itself, this hook can actually write to `settings.json`
+because hooks run as the user's own shell, not as a sandboxed plugin asset; that's also why this
+approach was chosen over authoring a plugin-owned output-style file to stand in for the
+built-in one.
+
 ## Debug logs (read on demand, not injected)
 
 `global-preferences.md` also points Claude at a tiered set of debug logs for root-caused
